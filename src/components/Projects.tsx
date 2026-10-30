@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Heart, ArrowRight, ExternalLink, Play } from 'lucide-react';
-import { projectsData } from '../data/portfolioData';
+import { usePortfolio } from '../context/PortfolioContext';
 import { Project } from '../types';
 import { ProjectModal } from './ProjectModal';
 
 export const Projects: React.FC = () => {
+  const { projects } = usePortfolio();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
@@ -29,19 +30,21 @@ export const Projects: React.FC = () => {
           </div>
 
           <div>
-            <button
-              onClick={() => setSelectedProject(projectsData[0])}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#ec5a80] to-[#f498ac] hover:from-[#e14872] hover:to-[#ec5a80] text-white text-sm font-medium shadow-md shadow-[#ec5a80]/20 transition-all duration-300 hover:scale-[1.02] cursor-pointer"
-            >
-              <span>Ver todos os projetos</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
+            {projects.length > 0 && (
+              <button
+                onClick={() => setSelectedProject(projects[0])}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#ec5a80] to-[#f498ac] hover:from-[#e14872] hover:to-[#ec5a80] text-white text-sm font-medium shadow-md shadow-[#ec5a80]/20 transition-all duration-300 hover:scale-[1.02] cursor-pointer"
+              >
+                <span>Ver todos os projetos</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            )}
           </div>
         </div>
 
-        {/* 3 Project Cards matching reference */}
+        {/* Project Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
-          {projectsData.map((project) => (
+          {projects.map((project) => (
             <div
               key={project.id}
               onClick={() => setSelectedProject(project)}

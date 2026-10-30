@@ -4,6 +4,8 @@
  */
 
 import React, { useState } from 'react';
+import { PortfolioProvider } from './context/PortfolioContext';
+import { AdminPanel } from './components/AdminPanel';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -14,7 +16,7 @@ import { Contact } from './components/Contact';
 import { ContactModal } from './components/ContactModal';
 import { Footer } from './components/Footer';
 
-export default function App() {
+function PortfolioContent() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   return (
@@ -50,6 +52,17 @@ export default function App() {
         isOpen={isContactModalOpen}
         onClose={() => setIsContactModalOpen(false)}
       />
+
+      {/* Painel Administrativo Protegido */}
+      <AdminPanel />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <PortfolioProvider>
+      <PortfolioContent />
+    </PortfolioProvider>
   );
 }

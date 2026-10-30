@@ -1,8 +1,10 @@
 import React from 'react';
 import { MapPin, GraduationCap, Monitor, Briefcase, Heart } from 'lucide-react';
-import { personalInfo } from '../data/portfolioData';
+import { usePortfolio } from '../context/PortfolioContext';
 
 export const About: React.FC = () => {
+  const { personalInfo } = usePortfolio();
+
   const infoCards = [
     {
       icon: MapPin,
@@ -35,7 +37,7 @@ export const About: React.FC = () => {
 
       {/* Floating handwritten doodle note */}
       <div className="hidden xl:block absolute top-24 right-16 font-handwriting text-2xl text-[#ec5a80]/80 rotate-6 select-none animate-soft-float">
-        {personalInfo.handwrittenQuotes.about}
+        {personalInfo.handwrittenQuotes?.about || 'Pequenos códigos, grandes sonhos ♡'}
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -53,8 +55,8 @@ export const About: React.FC = () => {
                 {/* Photo */}
                 <div className="relative overflow-hidden rounded-sm bg-[#fce7eb] aspect-[4/5]">
                   <img
-                    src="/assets/character/avatar-portrait.png"
-                    alt="Maria Fernanda — Polaroid com headset rosa"
+                    src={personalInfo.avatarUrl || '/assets/character/avatar-portrait.png'}
+                    alt={`${personalInfo.name} — Polaroid com headset rosa`}
                     className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                   />
                   

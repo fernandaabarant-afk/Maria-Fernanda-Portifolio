@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mail, Github, Linkedin, Instagram, Heart, Copy, CheckCircle2 } from 'lucide-react';
-import { personalInfo } from '../data/portfolioData';
+import { usePortfolio } from '../context/PortfolioContext';
 import { WhatsAppIcon } from './icons/WhatsAppIcon';
 
 interface ContactProps {
@@ -8,6 +8,7 @@ interface ContactProps {
 }
 
 export const Contact: React.FC<ContactProps> = ({ onOpenModal }) => {
+  const { personalInfo } = usePortfolio();
   const [copied, setCopied] = React.useState(false);
 
   const handleCopyEmail = () => {

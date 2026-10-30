@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Sparkles, Mail, Github, Linkedin, Instagram, ArrowRight, Heart, Code2 } from 'lucide-react';
-import { personalInfo } from '../data/portfolioData';
+import { usePortfolio } from '../context/PortfolioContext';
 
 interface HeroProps {
   onOpenContact: () => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
+  const { personalInfo } = usePortfolio();
   const [easterEggMessage, setEasterEggMessage] = useState<string | null>(null);
 
   const handleEasterEgg = (type: 'cat' | 'code') => {

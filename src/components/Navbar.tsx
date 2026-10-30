@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Sparkles, Heart } from 'lucide-react';
-import { personalInfo } from '../data/portfolioData';
+import { usePortfolio } from '../context/PortfolioContext';
 
 export const Navbar: React.FC = () => {
+  const { personalInfo } = usePortfolio();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('inicio');
@@ -69,8 +70,8 @@ export const Navbar: React.FC = () => {
           <div className="relative">
             <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#f498ac] shadow-sm shadow-[#ec5a80]/30 transition-transform group-hover:scale-105">
               <img
-                src="/assets/character/avatar-portrait.png"
-                alt="Maria Fernanda Avatar"
+                src={personalInfo.avatarUrl || '/assets/character/avatar-portrait.png'}
+                alt={`${personalInfo.name} Avatar`}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -78,10 +79,10 @@ export const Navbar: React.FC = () => {
           </div>
           <div className="flex flex-col">
             <span className="text-white font-medium text-sm sm:text-base group-hover:text-[#f498ac] transition-colors flex items-center gap-1.5">
-              Maria Fernanda
+              {personalInfo.name}
               <Heart className="w-3.5 h-3.5 text-[#ec5a80] fill-[#ec5a80] inline opacity-80" />
             </span>
-            <span className="text-xs text-neutral-400 font-normal">Desenvolvedora Web</span>
+            <span className="text-xs text-neutral-400 font-normal">{personalInfo.role}</span>
           </div>
         </button>
 

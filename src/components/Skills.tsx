@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Heart, Info, CheckCircle2 } from 'lucide-react';
-import { skillsData, personalInfo } from '../data/portfolioData';
+import { usePortfolio } from '../context/PortfolioContext';
 import { Skill } from '../types';
 import { TechIconBadge } from './icons/TechIcons';
 
 export const Skills: React.FC = () => {
+  const { skills, personalInfo } = usePortfolio();
   const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
 
   return (
@@ -45,7 +46,7 @@ export const Skills: React.FC = () => {
           {/* Center 8-card grid */}
           <div className="lg:col-span-5">
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-3.5">
-              {skillsData.map((skill) => {
+              {skills.map((skill) => {
                 const isSelected = selectedSkill?.name === skill.name;
                 return (
                   <button

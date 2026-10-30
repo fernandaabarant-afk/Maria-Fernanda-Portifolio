@@ -4,11 +4,11 @@ import { Project, Skill, Service, SocialLinks } from '../types';
    1. CONTATOS E REDES SOCIAIS (Centralizado)
    Altere aqui para atualizar todos os links em todo o portfólio de uma só vez!
    ========================================================================== */
-export const contactAndSocialLinks: SocialLinks & { whatsappFormatted: string } = {
+export const contactAndSocialLinks: SocialLinks = {
   email: 'fernandaabarant@gmail.com',
-  whatsapp: '5511990273328',
-  whatsappFormatted: '(11) 99027-3328',
-  whatsappUrl: 'https://wa.me/5511990273328?text=Ol%C3%A1%20Maria%20Fernanda%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar!',
+  whatsapp: '5511920889940',
+  whatsappFormatted: '(11) 92088-9940',
+  whatsappUrl: 'https://wa.me/5511920889940?text=Ol%C3%A1%20Maria%20Fernanda%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar!',
   linkedin: 'https://www.linkedin.com/in/mariaabarant/',
   github: 'https://github.com/fernandaabarant-afk',
   instagram: 'https://instagram.com',
@@ -55,78 +55,60 @@ export const personalInfo = {
    3. PROJETOS (Estrutura Centralizada e de Fácil Atualização)
    Para adicionar, editar ou remover um projeto, basta modificar esta lista!
    Cada projeto contém:
+   - id: Identificador único
    - name: Nome do projeto
    - description: Descrição resumida
+   - fullDescription: Descrição detalhada exibida no modal
    - image: Imagem ou thumbnail de apresentação
    - technologies: Lista de tecnologias utilizadas
    - demoUrl: Link da demonstração ao vivo (deploy)
-   - githubUrl: Link do repositório no GitHub
+   - githubUrl: Link do repositório oficial no GitHub
+   - hasInteractiveDemo: true para abrir demo interativo no modal
+   - features: Lista de recursos principais implementados
    ========================================================================== */
 export const projectsData: Project[] = [
   {
     id: 'minha-economia',
     name: 'Minha Economia',
     title: 'Minha Economia',
-    description: 'Aplicativo intuitivo para gestão financeira pessoal com cálculo dinâmico de saldo.',
+    description: 'Aplicativo completo para economia pessoal, gestão de orçamento, metas e análise financeira.',
     fullDescription:
-      'Dashboard desenvolvido para gerenciamento financeiro pessoal. Permite lançar despesas, receitas, calcular o saldo líquido em tempo real e acompanhar o histórico de transações com categorização visual.',
-    technologies: ['TypeScript', 'React', 'HTML5', 'CSS3'],
-    tags: ['TypeScript', 'React', 'HTML5', 'CSS3'],
+      'Aplicação web desenvolvida em React e TypeScript para controle financeiro pessoal completo. Inclui autenticação de usuários, dashboard de receitas e despesas, controle de orçamentos, definição de metas financeiras, extrato de transações e relatórios visuais com persistência de dados.',
+    technologies: ['TypeScript', 'React', 'Tailwind CSS', 'Vite'],
+    tags: ['TypeScript', 'React', 'Tailwind CSS', 'Vite'],
     image: '/assets/projects/finance-thumb.png',
     demoUrl: 'https://fernandaabarant-afk.github.io/Minha-Economia/',
     githubUrl: 'https://github.com/fernandaabarant-afk/Minha-Economia',
     hasInteractiveDemo: true,
     category: 'web',
     features: [
-      'Cálculo automático de Entradas, Saídas e Saldo Total',
-      'Histórico de transações com data e descrição',
-      'Destaque com cores para valores positivos (verde/rosa) e negativos',
-      'Interface limpa, moderna e responsiva',
-      'Disponível no GitHub e com deploy online',
+      'Gestão de receitas, despesas e saldo líquido em tempo real',
+      'Definição e acompanhamento de metas financeiras e orçamentos',
+      'Histórico completo de transações com categorização e filtros',
+      'Dashboard com métricas e resumos gráficos intuitivos',
+      'Deploy ativo no GitHub Pages e código aberto no GitHub',
     ],
   },
   {
-    id: 'music-player',
-    name: 'Music Player',
-    title: 'Music Player',
-    description: 'Player de música lofi com interface moderna, controles de áudio e visualizador estético.',
+    id: 'mafe',
+    name: 'MAFE — Minha IA',
+    title: 'MAFE — Minha IA',
+    description: 'Companheira interativa de inteligência artificial criada com HTML, CSS e JavaScript moderno.',
     fullDescription:
-      'Um reprodutor de áudio com interface inspirada em setups de programação e estética anime lofi. Conta com controles de reprodução, barra de progresso interativa, ajuste de volume e efeitos visuais.',
-    technologies: ['HTML5', 'CSS3', 'JavaScript'],
-    tags: ['HTML5', 'CSS3', 'JavaScript'],
-    image: '/assets/projects/music-thumb.png',
-    demoUrl: 'https://fernandaabarant-afk.github.io/Mafe/',
-    githubUrl: 'https://github.com/fernandaabarant-afk/Mafe',
-    hasInteractiveDemo: true,
-    category: 'app',
-    features: [
-      'Player funcional com faixas relaxantes de lofi/estudo',
-      'Controles completos: Play, Pause, Próxima, Anterior e Volume',
-      'Visualizador estético com onda de som animada',
-      'Timer de duração e tempo decorrido em tempo real',
-      'Tema escuro com detalhes em neon rosa e lilás',
-    ],
-  },
-  {
-    id: 'todo-list',
-    name: 'To Do List',
-    title: 'To Do List',
-    description: 'Lista de tarefas com design simples, minimalista e funcional para organização diária.',
-    fullDescription:
-      'Uma aplicação web elegante para gestão de tarefas diárias. Permite adicionar, concluir, filtrar e excluir afazeres com persistência local no navegador e animações suaves.',
-    technologies: ['HTML5', 'CSS3', 'JavaScript'],
-    tags: ['HTML5', 'CSS3', 'JavaScript'],
-    image: '/assets/projects/todo-thumb.png',
+      'Uma aplicação web que oferece uma companheira de IA acolhedora e interativa, com layout delicado em rosa e lilás, avatar personalizado, status em tempo real e sistema de mensagens interativas para conversar, aprender e trocar ideias.',
+    technologies: ['JavaScript', 'HTML5', 'CSS3'],
+    tags: ['JavaScript', 'HTML5', 'CSS3'],
+    image: '/assets/projects/mafe-thumb.png',
     demoUrl: 'https://fernandaabarant-afk.github.io/Mafe/',
     githubUrl: 'https://github.com/fernandaabarant-afk/Mafe',
     hasInteractiveDemo: true,
     category: 'web',
     features: [
-      'Adição e exclusão rápida de tarefas',
-      'Marcação de tarefas concluídas com efeito riscado',
-      'Filtros por status (Todas, Pendentes, Concluídas)',
-      'Armazenamento no LocalStorage do navegador',
-      'Design em tons pastéis e cantos suaves',
+      'Chat interativo com respostas dinâmicas e design aconchegante',
+      'Identidade visual única com avatar floral e paleta rosa suave',
+      'Indicador de status "Pronta para conversar" em tempo real',
+      'Design responsivo adaptável para celulares e computadores',
+      'Deploy ativo no GitHub Pages e código aberto no GitHub',
     ],
   },
 ];
@@ -205,7 +187,7 @@ export const servicesData: Service[] = [
     icon: 'code',
     deliverables: [
       'Design adaptável para celular, tablet e desktop',
-      'Código limpo em HTML5, CSS3 e JavaScript',
+      'Código limpo em HTML5, CSS3, JavaScript e React',
       'Otimização para carregamento rápido',
       'Estrutura preparada para SEO básico',
     ],

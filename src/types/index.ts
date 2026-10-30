@@ -1,6 +1,6 @@
 /**
  * TypeScript Type Definitions for Portfolio
- * Centralized interfaces for projects, skills, services, and contacts
+ * Centralized interfaces for projects, skills, services, contacts and administrative settings
  */
 
 export interface Project {
@@ -48,4 +48,42 @@ export interface Service {
   description: string;
   icon: string;
   deliverables: string[];
+}
+
+export interface PersonalInfo {
+  name: string;
+  nickname: string;
+  role: string;
+  tagline: string;
+  heroSubtitle: string;
+  heroDescription: string;
+  location: string;
+  education: string;
+  focus: string;
+  availability: string;
+  email: string;
+  github: string;
+  linkedin: string;
+  whatsapp: string;
+  whatsappUrl: string;
+  whatsappFormatted: string;
+  instagram?: string;
+  aboutParagraphs: string[];
+  profileImage?: string;
+  avatarUrl?: string;
+  handwrittenQuotes: {
+    hero: string;
+    about: string;
+    skills: string;
+    contact: string;
+  };
+}
+
+export interface PortfolioDatabase {
+  personalInfo: PersonalInfo;
+  projects: Project[];
+  skills: Skill[];
+  services: Service[];
+  version: number;
+  lastUpdated: string;
 }

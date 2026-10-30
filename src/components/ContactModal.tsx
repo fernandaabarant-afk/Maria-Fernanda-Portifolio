@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, Send, Mail, CheckCircle2, Copy, Heart, Sparkles } from 'lucide-react';
-import { personalInfo } from '../data/portfolioData';
+import { usePortfolio } from '../context/PortfolioContext';
 import { WhatsAppIcon } from './icons/WhatsAppIcon';
 
 interface ContactModalProps {
@@ -9,6 +9,7 @@ interface ContactModalProps {
 }
 
 export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
+  const { personalInfo } = usePortfolio();
   const [formData, setFormData] = useState({
     name: '',
     email: '',

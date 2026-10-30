@@ -4,6 +4,7 @@ import { Project } from '../types';
 import { TodoListDemo } from './demos/TodoListDemo';
 import { MusicPlayerDemo } from './demos/MusicPlayerDemo';
 import { FinanceTrackerDemo } from './demos/FinanceTrackerDemo';
+import { MafeChatDemo } from './demos/MafeChatDemo';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -55,11 +56,12 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               <h4 className="text-xs font-bold text-neutral-400 uppercase tracking-wider mb-2">
                 Experimente a Aplicação
               </h4>
-              {project.id === 'todo-list' && <TodoListDemo />}
-              {project.id === 'music-player' && <MusicPlayerDemo />}
-              {(project.id === 'controle-financeiro' || project.id === 'minha-economia') && (
+              {project.id === 'mafe' && <MafeChatDemo />}
+              {(project.id === 'minha-economia' || project.id === 'controle-financeiro') && (
                 <FinanceTrackerDemo />
               )}
+              {project.id === 'music-player' && <MusicPlayerDemo />}
+              {project.id === 'todo-list' && <TodoListDemo />}
             </div>
           )}
 

@@ -1,12 +1,13 @@
 import React from 'react';
 import { Layout, Palette, Sparkles, Check, ArrowRight, Heart } from 'lucide-react';
-import { servicesData } from '../data/portfolioData';
+import { usePortfolio } from '../context/PortfolioContext';
 
 interface ServicesProps {
   onOpenContact: () => void;
 }
 
 export const Services: React.FC<ServicesProps> = ({ onOpenContact }) => {
+  const { services } = usePortfolio();
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'code':
@@ -40,7 +41,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenContact }) => {
 
         {/* 3 Service Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-          {servicesData.map((service) => (
+          {services.map((service) => (
             <div
               key={service.id}
               className="bg-white rounded-3xl p-6 sm:p-7 border border-pink-100 hover:border-[#ec5a80]/40 shadow-sm hover:shadow-lg hover:shadow-[#ec5a80]/10 transition-all duration-300 flex flex-col justify-between group"
