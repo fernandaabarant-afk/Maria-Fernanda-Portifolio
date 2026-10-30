@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maria Fernanda — Portfólio</title>
     <meta name="description" content="Portfólio de tecnologia de Maria Fernanda. Desenvolvedora Web transformando ideias em experiências digitais." />
+    
+    <!-- Favicon Customizado -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23fce7eb' stroke='%23ec5a80' stroke-width='4'/%3E%3Cpath d='M30,45 C30,32 40,25 50,25 C60,25 70,32 70,45 C70,55 50,75 50,75 C50,75 30,55 30,45 Z' fill='%23ec5a80'/%3E%3C/svg%3E" />
     
-    <!-- Open Graph / Social Media -->
+    <!-- Open Graph / Redes Sociais -->
     <meta property="og:title" content="Maria Fernanda — Portfólio" />
     <meta property="og:description" content="Portfólio de tecnologia de Maria Fernanda. Desenvolvedora Web transformando ideias em experiências digitais." />
     <meta property="og:type" content="website" />
@@ -16,14 +18,517 @@
     <meta name="twitter:title" content="Maria Fernanda — Portfólio" />
     <meta name="twitter:description" content="Portfólio de tecnologia de Maria Fernanda. Desenvolvedora Web transformando ideias em experiências digitais." />
     
-    <!-- Google Fonts -->
+    <!-- Fontes do Google: Caveat (manuscrita), Plus Jakarta Sans (texto) e JetBrains Mono (código) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Estilos CSS3 Puros -->
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
-  <body class="bg-[#120f17] text-neutral-800 antialiased selection:bg-[#f498ac]/30 selection:text-[#b02251]">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <body>
+
+    <!-- ====================================================================
+         HEADER & NAVBAR
+         ==================================================================== -->
+    <header class="navbar">
+      <div class="container nav-container">
+        <!-- Brand / Avatar -->
+        <a href="#inicio" class="brand">
+          <div class="brand-avatar-box">
+            <img id="nav-avatar-img" src="/assets/character/avatar-portrait.png" alt="Maria Fernanda Avatar">
+            <span class="brand-status-dot" title="Disponível para projetos"></span>
+          </div>
+          <div class="brand-info">
+            <span id="nav-brand-name" class="brand-name">
+              Maria Fernanda <span class="heart-icon">♡</span>
+            </span>
+            <span id="nav-brand-role" class="brand-role">Desenvolvedora Web</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="nav-links" id="nav-links">
+          <a href="#inicio" class="nav-link active">Início</a>
+          <a href="#sobre" class="nav-link">Sobre</a>
+          <a href="#habilidades" class="nav-link">Habilidades</a>
+          <a href="#projetos" class="nav-link">Projetos</a>
+          <a href="#servicos" class="nav-link">Serviços</a>
+          <a href="#contato" class="nav-link">Contato</a>
+        </nav>
+
+        <!-- Frase Manuscrita no Topo -->
+        <div class="nav-quote" id="nav-quote">
+          sonhe planeje conquiste ♡
+        </div>
+
+        <!-- Botão Mobile -->
+        <button class="nav-toggle" id="nav-toggle-btn" aria-label="Abrir Menu">
+          ☰
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- ==================================================================
+           SEÇÃO 1: INÍCIO (HERO)
+           ================================================================== -->
+      <section id="inicio" class="hero-section">
+        <!-- Glows de Fundo -->
+        <div class="ambient-glow glow-1"></div>
+        <div class="ambient-glow glow-2"></div>
+        
+        <!-- Doodles flutuantes de coração -->
+        <div class="floating-doodle" style="top: 15%; right: 35%; font-size: 2rem;">♡</div>
+        <div class="floating-doodle" style="bottom: 15%; left: 8%; font-size: 2.5rem; animation-delay: 2s;">♡</div>
+
+        <div class="container">
+          <div class="hero-grid">
+            <!-- Coluna da Esquerda: Textos & Botões -->
+            <div>
+              <div class="hero-tag" id="hero-tag">
+                { } Desenvolvedora Front-end
+              </div>
+
+              <h1 class="hero-title" id="hero-name">
+                <span>Maria Fernanda</span>
+              </h1>
+
+              <h2 class="hero-subtitle" id="hero-subtitle">
+                Transformando ideias em experiências digitais.
+              </h2>
+
+              <p class="hero-desc" id="hero-desc">
+                Desenvolvimento, criatividade e tecnologia em cada projeto. Seja bem-vindo(a) ao meu portfólio!
+              </p>
+
+              <div class="hero-cta">
+                <button id="btn-hero-projects" class="btn-primary">
+                  <span>✨ Conheça meus projetos</span>
+                </button>
+                <button class="btn-secondary open-contact-modal">
+                  <span>✉️ Entre em contato</span>
+                </button>
+              </div>
+
+              <!-- Redes Sociais no Topo -->
+              <div class="hero-socials">
+                <a id="hero-github" href="https://github.com/fernandaabarant-afk" target="_blank" rel="noopener noreferrer" class="social-circle-btn" title="GitHub" aria-label="GitHub">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+                <a id="hero-linkedin" href="https://www.linkedin.com/in/mariaabarant/" target="_blank" rel="noopener noreferrer" class="social-circle-btn" title="LinkedIn" aria-label="LinkedIn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a id="hero-instagram" href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" title="Instagram" aria-label="Instagram">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+                <button class="social-circle-btn open-contact-modal" title="Enviar E-mail" aria-label="Enviar E-mail">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Coluna da Direita: Ilustração Oficial da Personagem no Setup -->
+            <div class="setup-frame-wrapper">
+              <div class="setup-glow"></div>
+              <div class="setup-card">
+                <img src="/assets/character/hero-setup.png" alt="Maria Fernanda no setup anime de programação com headset rosa">
+                
+                <!-- Hotspot Interativo: Código no Monitor -->
+                <button class="setup-hotspot code-hotspot" id="code-easter-egg" title="Clique para rodar no console">
+                  <span>&lt;/&gt;</span>
+                  <span>const name = "Maria Fernanda"</span>
+                </button>
+
+                <!-- Hotspot Interativo: Gatinho -->
+                <button class="setup-hotspot cat-hotspot" id="cat-easter-egg" title="Fazer carinho no gatinho">
+                  🐾
+                </button>
+
+                <!-- Badge do Setup -->
+                <div class="setup-badge">
+                  <span class="pulse-dot"></span>
+                  <span>Setup da Maria Fernanda • Online</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           SEÇÃO 2: SOBRE MIM
+           ================================================================== -->
+      <section id="sobre" class="section-light bg-about">
+        <!-- Citação Manuscrita Flutuante -->
+        <div class="floating-doodle" id="about-quote" style="top: 2.5rem; right: 4rem; font-size: 1.5rem;">
+          Pequenos códigos, grandes sonhos ♡
+        </div>
+
+        <div class="container">
+          <div class="about-grid">
+            <!-- Esquerda: Polaroid da Personagem -->
+            <div class="polaroid-wrapper">
+              <div class="polaroid-card">
+                <div class="washi-tape"></div>
+                <div class="polaroid-photo">
+                  <img id="about-avatar-img" src="/assets/character/avatar-portrait.png" alt="Maria Fernanda — Retrato Anime">
+                </div>
+                <div class="polaroid-sticker" title="Gatinho da Maria">🐱</div>
+                <div class="polaroid-caption">Maria Fernanda ♡</div>
+              </div>
+            </div>
+
+            <!-- Centro: Apresentação & Trajetória -->
+            <div>
+              <div class="section-tag">Sobre Mim</div>
+              <h2 class="section-title">
+                Prazer, sou a Maria Fernanda! <span class="heart-icon">♡</span>
+              </h2>
+
+              <div class="about-text" id="about-paragraphs">
+                <!-- Preenchido via JavaScript -->
+              </div>
+
+              <div class="about-signature">Maria Fernanda ♡</div>
+            </div>
+
+            <!-- Direita: Cards de Informações Pessoais -->
+            <div class="info-cards-stack">
+              <div class="info-card">
+                <div class="info-card-icon">📍</div>
+                <div>
+                  <span class="info-card-label">Localização</span>
+                  <div class="info-card-value" id="info-location">Brasil</div>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-card-icon">🎓</div>
+                <div>
+                  <span class="info-card-label">Formação</span>
+                  <div class="info-card-value" id="info-education">Em andamento</div>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-card-icon">💻</div>
+                <div>
+                  <span class="info-card-label">Foco</span>
+                  <div class="info-card-value" id="info-focus">Desenvolvimento Web e Front-end</div>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-card-icon">💼</div>
+                <div>
+                  <span class="info-card-label">Disponível para</span>
+                  <div class="info-card-value" id="info-availability">Projetos, oportunidades e novos desafios</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           SEÇÃO 3: HABILIDADES
+           ================================================================== -->
+      <section id="habilidades" class="section-light bg-skills">
+        <div class="container">
+          <div class="skills-grid">
+            <!-- Esquerda: Explicação -->
+            <div>
+              <div class="section-tag">Minhas Habilidades</div>
+              <h2 class="section-title">
+                Tecnologias que eu utilizo <span class="heart-icon">♡</span>
+              </h2>
+              <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.25rem;">
+                Estou sempre aprendendo e aprimorando meus conhecimentos. Aqui estão algumas das tecnologias e ferramentas com as quais construo meus projetos:
+              </p>
+
+              <div style="background: rgba(255,255,255,0.75); border: 1px solid rgba(244,152,172,0.4); border-radius: 1rem; padding: 1rem; font-size: 0.8rem; color: var(--text-muted);">
+                <div style="color: var(--color-wine); font-weight: 700; margin-bottom: 0.35rem;">
+                  ℹ️ Evolução contínua
+                </div>
+                <p>Pratico código diariamente criando páginas, resolvendo desafios de lógica e explorando novas ferramentas do ecossistema web.</p>
+              </div>
+            </div>
+
+            <!-- Centro: Grid de Cards Interativos -->
+            <div>
+              <div class="skills-cards-box" id="skills-grid-container">
+                <!-- Inserido dinamicamente via JS -->
+              </div>
+              <div id="skill-detail-box" class="skill-detail-box" style="display: none;"></div>
+            </div>
+
+            <!-- Direita: Ilustração de Apoio -->
+            <div>
+              <div class="skills-setup-card">
+                <img src="/assets/character/skills-setup.png" alt="Maria Fernanda no setup programando">
+              </div>
+              <div class="skills-setup-quote" id="skills-quote">
+                Código também é uma forma de arte ♡
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           SEÇÃO 4: PROJETOS
+           ================================================================== -->
+      <section id="projetos" class="section-light bg-projects">
+        <div class="container">
+          <div class="projects-header">
+            <div>
+              <div class="section-tag">Meus Projetos</div>
+              <h2 class="section-title">
+                Projetos em destaque <span class="heart-icon">♡</span>
+              </h2>
+              <p style="font-size: 0.95rem; color: var(--text-muted); max-width: 580px;">
+                Aqui estão alguns dos projetos reais que desenvolvi no GitHub. Cada um deles reflete prática, estudo e dedicação na web.
+              </p>
+            </div>
+
+            <button id="btn-all-projects" class="btn-primary">
+              <span>Ver todos os projetos →</span>
+            </button>
+          </div>
+
+          <!-- Grid de Projetos -->
+          <div class="projects-grid" id="projects-grid-container">
+            <!-- Inserido dinamicamente via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           SEÇÃO 5: SERVIÇOS
+           ================================================================== -->
+      <section id="servicos" class="section-light bg-services">
+        <div class="container">
+          <div style="text-align: center; max-width: 640px; margin: 0 auto 2.5rem;">
+            <div class="section-tag">Serviços</div>
+            <h2 class="section-title" style="justify-content: center;">
+              Como posso colaborar com você <span class="heart-icon">♡</span>
+            </h2>
+            <p style="font-size: 0.95rem; color: var(--text-muted);">
+              Soluções dedicadas para transformar sua visão em uma interface funcional, moderna e com identidade única.
+            </p>
+          </div>
+
+          <div class="services-grid" id="services-grid-container">
+            <!-- Inserido dinamicamente via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           SEÇÃO 6: CONTATO
+           ================================================================== -->
+      <section id="contato" class="contact-section">
+        <div class="container">
+          <div class="contact-grid">
+            <!-- Esquerda: Personagem com Headset Rosa -->
+            <div class="contact-character-box">
+              <span class="contact-quote" id="contact-quote">Vamos conversar? ♡</span>
+              <div class="contact-char-frame">
+                <img src="/assets/character/contact-character.png" alt="Maria Fernanda com headset rosa">
+              </div>
+            </div>
+
+            <!-- Centro: Texto e Botões de Ação -->
+            <div>
+              <div class="section-tag" style="background: rgba(236,90,128,0.2); color: var(--text-pink); border-color: rgba(244,152,172,0.4);">
+                Entre em Contato
+              </div>
+              <h2 style="font-size: 2.25rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem; line-height: 1.2;">
+                Vamos construir algo incrível!?
+              </h2>
+              <p style="font-size: 0.95rem; color: #d5cad8; line-height: 1.7; margin-bottom: 1.5rem;">
+                Estou sempre aberta a novas oportunidades, parcerias e projetos. Me mande uma mensagem! ♡
+              </p>
+
+              <!-- Botão Principal: WhatsApp direto para celular -->
+              <div class="contact-actions">
+                <a id="contact-whatsapp-btn" href="https://wa.me/5511920889940" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+                  <!-- Ícone WhatsApp -->
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.961.947 3.03.947 3.181 0 5.767-2.586 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm9.969 5.766c0 5.502-4.478 9.98-9.98 9.98-1.748 0-3.385-.45-4.815-1.239l-5.205 1.364 1.388-5.074c-.879-1.488-1.388-3.23-1.388-5.031 0-5.502 4.478-9.98 9.98-9.98 5.502 0 9.98 4.478 9.98 9.98z"/></svg>
+                  <span id="contact-whatsapp-text">WhatsApp ((11) 92088-9940)</span>
+                </a>
+
+                <button class="btn-primary open-contact-modal" style="font-size: 0.85rem;">
+                  ✉️ Enviar E-mail
+                </button>
+
+                <button class="btn-copy-email" id="btn-copy-email" title="Copiar e-mail">
+                  📋 Copiar
+                </button>
+              </div>
+
+              <!-- Links Sociais -->
+              <div style="display: flex; gap: 0.75rem; margin-top: 1.25rem;">
+                <a id="contact-whatsapp-icon-btn" href="https://wa.me/5511920889940" target="_blank" rel="noopener noreferrer" class="social-circle-btn" style="color:#25d366; border-color:rgba(37,211,102,0.4);" title="WhatsApp">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.961.947 3.03.947 3.181 0 5.767-2.586 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm9.969 5.766c0 5.502-4.478 9.98-9.98 9.98-1.748 0-3.385-.45-4.815-1.239l-5.205 1.364 1.388-5.074c-.879-1.488-1.388-3.23-1.388-5.031 0-5.502 4.478-9.98 9.98-9.98 5.502 0 9.98 4.478 9.98 9.98z"/></svg>
+                </a>
+                <a id="contact-github" href="https://github.com/fernandaabarant-afk" target="_blank" rel="noopener noreferrer" class="social-circle-btn" title="GitHub">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+                <a id="contact-linkedin" href="https://www.linkedin.com/in/mariaabarant/" target="_blank" rel="noopener noreferrer" class="social-circle-btn" title="LinkedIn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a id="contact-instagram" href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" title="Instagram">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Direita: Card de Código "sonhos.html" -->
+            <div>
+              <div class="code-window">
+                <div class="window-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                  <span class="window-title">sonhos.html</span>
+                </div>
+                <div>&lt;<span style="color:var(--color-primary)">div</span> <span style="color:#f498ac">class</span>=<span style="color:#34d399">"sonhos"</span>&gt;</div>
+                <div style="padding-left:1rem;">&lt;<span style="color:var(--color-primary)">p</span>&gt;<span style="color:#fce7eb">gratidão</span>&lt;/<span style="color:var(--color-primary)">p</span>&gt;</div>
+                <div style="padding-left:1rem;">&lt;<span style="color:var(--color-primary)">p</span>&gt;<span style="color:#fce7eb">foco</span>&lt;/<span style="color:var(--color-primary)">p</span>&gt;</div>
+                <div style="padding-left:1rem;">&lt;<span style="color:var(--color-primary)">p</span>&gt;<span style="color:#fce7eb">evolução</span>&lt;/<span style="color:var(--color-primary)">p</span>&gt;</div>
+                <div>&lt;/<span style="color:var(--color-primary)">div</span>&gt; <span class="font-handwriting" style="color:var(--color-primary); font-size:1.25rem;">♡</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ====================================================================
+         FOOTER
+         ==================================================================== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <!-- Assinatura Manuscrita -->
+          <div class="footer-signature" id="footer-signature">
+            Maria Fernanda ♡
+          </div>
+
+          <!-- Frase / Tagline -->
+          <div class="footer-tagline">
+            <span>Desenvolvedora</span>
+            <span style="color: var(--color-primary);">•</span>
+            <span>Criativa</span>
+            <span style="color: var(--color-primary);">•</span>
+            <span>Apaixonada por tecnologia</span>
+          </div>
+
+          <!-- Ações: Cadeado do Painel Admin + Voltar ao Topo -->
+          <div class="footer-actions">
+            <!-- Gatilho do Painel Admin -->
+            <button class="btn-admin-trigger" id="btn-admin-trigger" title="Painel Administrativo (Ctrl+Shift+A ou ?admin)" aria-label="Acesso Administrativo">
+              🔒
+            </button>
+
+            <!-- Voltar ao Topo -->
+            <button class="btn-back-top" id="btn-back-top">
+              <span>Voltar ao topo ↑</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom" id="footer-copyright">
+          © 2026 Maria Fernanda. Todos os direitos reservados. Feito com carinho e código ♡
+        </div>
+      </div>
+    </footer>
+
+    <!-- ====================================================================
+         MODAL DE CONTATO
+         ==================================================================== -->
+    <div class="modal-overlay" id="contact-modal">
+      <div class="modal-dialog">
+        <button class="modal-close-btn" id="close-contact-modal" aria-label="Fechar">✕</button>
+        <h3 class="modal-title">Entre em Contato</h3>
+        <p style="font-size:0.8rem; color:#b7a8bd; margin-bottom:1.5rem;">
+          Mande uma mensagem e vamos conversar sobre novas ideias e oportunidades.
+        </p>
+
+        <form id="contact-form">
+          <div class="form-group">
+            <label class="form-label">Seu Nome</label>
+            <input type="text" id="form-name" class="form-input" placeholder="Como posso te chamar?" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Seu E-mail</label>
+            <input type="email" id="form-email" class="form-input" placeholder="seuemail@exemplo.com" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Assunto</label>
+            <input type="text" id="form-subject" class="form-input" placeholder="Qual o tema da mensagem?">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Mensagem</label>
+            <textarea id="form-message" class="form-textarea" rows="4" placeholder="Escreva sua mensagem aqui..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width:100%; justify-content:center; margin-top:0.5rem;">
+            Enviar Mensagem 💌
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         MODAL DE DETALHES DO PROJETO
+         ==================================================================== -->
+    <div class="modal-overlay" id="project-modal">
+      <div class="modal-dialog">
+        <button class="modal-close-btn" id="close-project-modal" aria-label="Fechar">✕</button>
+        <span style="font-size:0.75rem; font-weight:700; color:var(--color-primary-light); text-transform:uppercase;">
+          Detalhes do Projeto
+        </span>
+        <h3 class="modal-title" id="modal-project-title">Título do Projeto</h3>
+        
+        <p id="modal-project-desc" style="font-size:0.875rem; color:#d5cad8; line-height:1.7; margin:1rem 0;"></p>
+
+        <div style="margin-bottom:1.25rem;">
+          <h4 style="font-size:0.75rem; text-transform:uppercase; color:#9c8e9f; margin-bottom:0.5rem; font-weight:700;">
+            Tecnologias Utilizadas
+          </h4>
+          <div id="modal-project-tags" class="project-tags"></div>
+        </div>
+
+        <div id="modal-project-features" style="margin-bottom:1.5rem;"></div>
+
+        <div style="display:flex; gap:0.75rem; flex-wrap:wrap; border-top:1px solid rgba(255,255,255,0.08); padding-top:1rem;">
+          <a id="modal-project-demo-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:0.8rem; padding:0.55rem 1.25rem;">
+            Ver Demonstração Online ↗
+          </a>
+          <a id="modal-project-github-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="font-size:0.8rem; padding:0.55rem 1.25rem;">
+            Repositório no GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         MODAL DO PAINEL ADMINISTRATIVO
+         ==================================================================== -->
+    <div class="modal-overlay" id="admin-modal">
+      <div class="modal-dialog admin-dialog" id="admin-modal-content">
+        <!-- Renderizado dinamicamente por js/admin.js -->
+      </div>
+    </div>
+
+    <!-- Scripts JavaScript Puros (Módulos Nativos) -->
+    <script type="module" src="/js/app.js"></script>
   </body>
 </html>
-
